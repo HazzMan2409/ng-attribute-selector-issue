@@ -2,26 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 
-## Development server
+## Bug Reproduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To reproduce the bug, run the following steps:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Run `ng serve` to serve the project.
+2. Open the app and inspect the button element in the app component.
+3. Notice that in its CSS selector there is an _ngcontent attribute on the input element.
+4. Run `ng build` to build the project.
+5. Open the main[hash].js file in the `dist/` directory.
+6. Search for the CSS selector in the app component (you can search for `input[type=search]`).
+7. Notice that in the selector there is no _ngcontent attribute on the input element.
